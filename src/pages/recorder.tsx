@@ -24,7 +24,8 @@ function Recorder() {
 
   const capture = useCallback(async () => {
     if (webcamRef.current) {
-      const imageSrc = (webcamRef.current).getScreenshot();
+      // const imageSrc = (webcamRef.current).getScreenshot();
+      const imageSrc = await (webcamRef.current as any).getScreenshot();
       setImg(imageSrc);
     }
   }, [webcamRef]);
